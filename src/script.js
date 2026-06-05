@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL;
   const SUPABASE_ANON_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY ;
   const MODEL_IA = import.meta.env.VITE_MODEL_IA;
-
+  console.log(SUPABASE_URL);
   const CAT_LABELS = {
     pedagogie: 'Pédagogie',
     evenement: 'Événement',
