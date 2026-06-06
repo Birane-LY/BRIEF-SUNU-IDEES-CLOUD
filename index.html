@@ -14,10 +14,12 @@
       <h1>Sunu Idées</h1>
       <div class="sunu-app-container">
         <div class="ideas-wall" id="ideas-wall">
-          <button class="circle-trigger-btn" id="open-modal-btn">
-            <i class="fa-solid fa-lightbulb"></i>
-            <span>Soumettre son idée</span>
+         <!-- Bouton d'Action Flottant (FAB) -->
+          <button id="open-modal-btn" class="fab-button" title="Soumettre une idée">
+            <i class="fa-solid fa-lightbulb fab-icon"></i>
+            <span class="fab-text">Soumettre son idée</span>
           </button>
+
         </div>
       </div>
     </div>
@@ -43,8 +45,6 @@
       <button id="submit-btn" type="button">Ajouter au mur</button>
     </div>
   </div>
-
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script type="module" src="./src/script.js"></script>
 </body>
 </html>

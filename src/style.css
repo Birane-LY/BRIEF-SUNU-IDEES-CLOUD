@@ -93,23 +93,68 @@ body {
   }
 }
 
-/* Sur mobile, centré seul */
-@media (max-width: 991px) {
-  .circle-trigger-btn {
-    justify-self: center;
+/* --- BOUTON FLOTTANT (FAB) --- */
+.fab-button {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: linear-gradient(135deg, #9d4edf, #7b2cbf); /* Dégradé violet moderne */
+  color: #ffffff;
+  border: none;
+  border-radius: 50px; /* Forme pilule/arrondie */
+  padding: 15px 25px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(157, 78, 223, 0.4);
+  z-index: 999; /* Reste toujours au-dessus des post-its */
+  transition: all 0.3s ease;
+}
+
+/* Effets au survol */
+.fab-button:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 6px 20px rgba(157, 78, 223, 0.6);
+  background: linear-gradient(135deg, #a85cf0, #8a3cd2);
+}
+
+/* Effet au clic */
+.fab-button:active {
+  transform: translateY(-1px) scale(0.98);
+}
+
+.fab-icon {
+  font-size: 1.2rem;
+  animation: float-pulse 2s infinite ease-in-out;
+}
+
+/* Petite animation subtile sur l'ampoule */
+@keyframes float-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+/* Responsive : Version compacte (cercle uniquement) sur mobile */
+@media (max-width: 600px) {
+  .fab-button {
+    padding: 0;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    justify-content: center;
+    bottom: 20px;
+    right: 20px;
   }
-}
-
-.circle-trigger-btn i {
-  font-size: 2.5rem;
-  color: #f1c40f;
-  animation: pulse 2s infinite;
-}
-
-.circle-trigger-btn:hover {
-  transform: scale(1.08);
-  background: rgba(255, 194, 209, 0.4);
-  box-shadow: 0 15px 40px rgba(255, 194, 209, 0.4);
+  .fab-text {
+    display: none; /* Masque le texte sur smartphone */
+  }
+  .fab-icon {
+    font-size: 1.4rem;
+  }
 }
 
 /* --- LES POST-ITS  --- */
